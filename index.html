@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKULEH PRO 102 GRAPHICS EXPERT GROUP</title>
+<style>
+body{font-family:Arial;margin:0;background:#0a0f1c;color:#fff}
+header{background:#111a2e;padding:20px;text-align:center}
+header h1{color:#00d4ff;margin:0}
+nav{display:flex;flex-wrap:wrap;justify-content:center;background:#0d1526}
+nav a{color:#fff;padding:15px;text-decoration:none}
+nav a:hover{background:#00d4ff;color:#000}
+section{padding:40px}
+.hero{text-align:center;background:linear-gradient(to right,#00d4ff,#004aad)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#111a2e;padding:20px;border-radius:10px}
+button{background:#00d4ff;border:none;padding:10px 20px;cursor:pointer}
+input,textarea,select{width:100%;padding:10px;margin:10px 0;border:none;border-radius:5px}
+.whatsapp-btn{background:#25D366;color:#fff;padding:12px 20px;text-decoration:none;border-radius:5px;display:inline-block}
+img{width:100%;border-radius:10px}
+footer{text-align:center;background:#111a2e;padding:20px}
+</style>
+
+<script>
+function calculatePrice(){
+let service=document.getElementById("service").value;
+let price=0;
+
+if(service=="Logo Design") price=30000;
+if(service=="Poster/Flyer") price=20000;
+if(service=="ID Card") price=15000;
+
+document.getElementById("price").innerText="Estimated Price: UGX "+price;
+}
+
+function sendToWhatsApp(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let service=document.getElementById("service").value;
+let message=document.getElementById("message").value;
+
+let url="https://wa.me/256707542217?text="+
+"*NEW ORDER*%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Service: "+service+"%0A"+
+"Details: "+message;
+
+window.open(url,'_blank');
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>OKULEH PRO 102 GRAPHICS EXPERT GROUP</h1>
+<p>Creative • Professional • Reliable</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#order">Order</a>
+<a href="#payment">Payment</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="hero">
+<h2>Professional Graphics That Elevate Your Brand</h2>
+<button onclick="document.getElementById('order').scrollIntoView()">Start Order</button>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card">Logo Design</div>
+<div class="card">Flyers & Posters</div>
+<div class="card">Certificates</div>
+<div class="card">ID Cards</div>
+</div>
+</section>
+
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/300x200"><p>Sample Work 1</p></div>
+<div class="card"><img src="https://via.placeholder.com/300x200"><p>Sample Work 2</p></div>
+<div class="card"><img src="https://via.placeholder.com/300x200"><p>Sample Work 3</p></div>
+</div>
+</section>
+
+<section id="order">
+<h2>Place Order</h2>
+<input type="text" id="name" placeholder="Full Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<select id="service" onchange="calculatePrice()">
+<option>Logo Design</option>
+<option>Poster/Flyer</option>
+<option>ID Card</option>
+</select>
+<p id="price">Estimated Price: UGX 0</p>
+<textarea id="message" placeholder="Project Details"></textarea>
+<button onclick="sendToWhatsApp()">Send via WhatsApp</button>
+</section>
+
+<section id="payment">
+<h2>Payment Options</h2>
+<div class="grid">
+<div class="card"><h3>MTN MoMo</h3><p>0707542217</p></div>
+<div class="card"><h3>Airtel Money</h3><p>0759228571</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>+256 707 542217 | +256 759 228571</p>
+<a class="whatsapp-btn" href="https://wa.me/256707542217" target="_blank">Chat on WhatsApp</a>
+</section>
+
+<footer>
+<p>© 2026 OKULEH PRO 102 GRAPHICS EXPERT GROUP</p>
+</footer>
+
+</body>
+</html>
